@@ -1,0 +1,24 @@
+<table class="table" *ngIf="employees && employees.length > 0">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">email</th>
+            <th scope="col">phone</th>
+            <th scope="col">salary</th>
+            <th scope="col">department</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.phone}}</td>
+            <td>{{employee.salary}}</td>
+            <td>{{employee.department}}</td>
+        </tr>
+    </tbody>
+</table>
+<p *ngIf="!employees || employees.length <= 0">No Employees Found</p>
+<button (click)="postEmployeeData(employees)">send data</button>
